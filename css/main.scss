@@ -125,8 +125,18 @@ main {
   font-weight: 500;
   align-self: flex-start;
   margin-top: auto;
+  transition: color 0.2s, background-color 0.2s;
   .icon {
     fill: rgba(var(--foreground-color), 1);
+    transition: fill 0.2s;
+  }
+  &:hover {
+    color: var(--accent-color);
+    background-color: rgba(var(--foreground-color), 1);
+    box-shadow: 0 0 0 0.1rem var(--accent-color) inset;
+    .icon {
+      fill: var(--accent-color);
+    }
   }
 }
 
