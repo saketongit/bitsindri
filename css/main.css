@@ -56,6 +56,22 @@ strong {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
+.gap-0-5 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.align-content-start {
+  align-content: start;
+}
+
 .align-items-center {
   align-items: center;
 }
