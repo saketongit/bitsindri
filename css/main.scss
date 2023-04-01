@@ -53,6 +53,9 @@ strong {
 .flex {
   display: flex;
 }
+.flex-direction-column {
+  flex-direction: column;
+}
 .grid {
   display: grid;
 }
@@ -65,12 +68,18 @@ strong {
 .gap-1 {
   gap: 1rem;
 }
+.gap-1-5 {
+  gap: 1.5rem;
+}
 .align-content-start {
   align-content: start;
 }
 
 .align-items-center {
   align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
 }
 
 header {
