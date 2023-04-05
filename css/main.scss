@@ -97,8 +97,14 @@ main {
   top: 0;
   justify-content: center;
   padding: 1rem;
-  background-color: rgba(var(--foreground-color), 1);
   width: 100%;
+  background-color: rgb(238, 82, 82);
+  .icon {
+    fill: rgba(var(--foreground-color), 1);
+  }
+  #banner_content {
+    color: rgba(var(--foreground-color), 1);
+  }
 }
 .app {
   display: flex;
