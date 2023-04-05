@@ -52,7 +52,7 @@
                 <polygon points="14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10" />
             </g>
         </svg>
-        <strong>Looking for sellers. 5 tokenroom# @ $2/token price</strong>
+        <strong id="banner_content"></strong>
     </section>
     <div class="grid gap-1-5"
         style="text-align: center; justify-content: center; padding: 8vw 1rem; margin-bottom: 1rem;">
@@ -66,7 +66,7 @@
         </div>
         <div class="flex flex-direction-column gap-0-5 align-items-center justify-content-center"
             style="padding: 1.5rem; text-align: center; aspect-ratio: 1/1; width: 13rem; background-color: rgba(var(--foreground-color),1); border-radius: 10rem; justify-self: center; font-size: 1rem; font-weight: 500; margin-top: 2rem;">
-            <strong style="font-size: 2rem; line-height: 1;">$2</strong>
+            <strong id="token_price" style="font-size: 2rem; line-height: 1;"></strong>
             <p class="flex flex-direction-column gap-0-5 justify-content-center">
                 Price per tokenroom# token.
             </p>
@@ -445,6 +445,21 @@
             </a>
         </div>
     </main>
+    <script>
+        const roomTokenPrice = 2;
+        const tokensNeeded = 5;
+        function formatCurrency(amount) {
+            return amount.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+            });
+        }
+        window.onload = function () {
+            document.getElementById('token_price').textContent = formatCurrency(roomTokenPrice);
+            document.getElementById('banner_content').textContent = `Looking for sellers. ${tokensNeeded} tokenroom# @ ${formatCurrency(roomTokenPrice)}`;
+        }
+    </script>
 </body>
 
 </html>
