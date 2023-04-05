@@ -263,3 +263,6 @@ sm-copy {
     min-width: 24rem;
   }
 }
+.hidden {
+  display: none;
+}

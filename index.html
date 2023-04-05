@@ -44,7 +44,7 @@
         </h1>
         <theme-toggle></theme-toggle>
     </header>
-    <section id="main_banner" class="flex gap-1 align-items-center">
+    <section id="main_banner" class="flex gap-1 align-items-center hidden ">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px"
             viewBox="0 0 24 24" width="24px" fill="#000000">
             <g>
@@ -458,6 +458,8 @@
         window.onload = function () {
             document.getElementById('token_price').textContent = formatCurrency(roomTokenPrice);
             document.getElementById('banner_content').textContent = `Looking for sellers. ${tokensNeeded} tokenroom# @ ${formatCurrency(roomTokenPrice)}`;
+            if (tokensNeeded > 0)
+                document.getElementById('main_banner').classList.remove('hidden');
         }
     </script>
 </body>
