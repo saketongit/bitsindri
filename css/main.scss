@@ -92,6 +92,14 @@ main {
   padding: 1.5rem max(1rem, 6vw);
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
+#main_banner {
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(var(--foreground-color), 1);
+  width: 100%;
+}
 .app {
   display: flex;
   flex-direction: column;
