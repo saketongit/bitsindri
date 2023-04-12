@@ -242,6 +242,13 @@ sm-copy {
   font-size: 0.9rem;
   color: rgba(var(--text-color), 0.8);
 }
+#hero_section {
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 8vw 1rem;
+  margin-bottom: 1rem;
+}
 .important-links {
   display: flex;
   flex-wrap: wrap;
