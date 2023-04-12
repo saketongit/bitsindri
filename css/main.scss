@@ -242,6 +242,39 @@ sm-copy {
   font-size: 0.9rem;
   color: rgba(var(--text-color), 0.8);
 }
+.important-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.important-link {
+  list-style: none;
+  flex: 1;
+  .icon,
+  img {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: var(--accent-color);
+    flex-shrink: 0;
+  }
+  a {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    gap: 0.5rem;
+    font-weight: 500;
+    background-color: rgba(var(--foreground-color), 1);
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
 @media screen and (min-width: 768px) {
   main {
