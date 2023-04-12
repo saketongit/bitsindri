@@ -248,6 +248,12 @@ sm-copy {
   justify-items: center;
   padding: 8vw 1rem;
   margin-bottom: 1rem;
+  h1 {
+    font-size: max(1.6rem, 3vw);
+  }
+  p {
+    max-width: 100%;
+  }
 }
 .important-links {
   display: flex;

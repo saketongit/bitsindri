@@ -268,6 +268,12 @@ sm-copy {
   padding: 8vw 1rem;
   margin-bottom: 1rem;
 }
+#hero_section h1 {
+  font-size: max(1.6rem, 3vw);
+}
+#hero_section p {
+  max-width: 100%;
+}
 
 .important-links {
   display: flex;
