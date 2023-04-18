@@ -267,6 +267,7 @@ sm-copy {
   justify-items: center;
   padding: 8vw 1rem;
   margin-bottom: 1rem;
+  gap: 2rem;
 }
 #hero_section h1 {
   font-size: max(1.6rem, 3vw);
