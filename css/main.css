@@ -276,6 +276,19 @@ sm-copy {
   max-width: 100%;
 }
 
+#token_price_wrapper {
+  padding: 1.5rem;
+  text-align: center;
+  aspect-ratio: 1/1;
+  width: 13rem;
+  background-color: rgba(var(--foreground-color), 1);
+  border-radius: 10rem;
+  justify-self: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
 .important-links {
   display: flex;
   flex-wrap: wrap;

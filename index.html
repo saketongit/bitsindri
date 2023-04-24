@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css">
-    <script src="components.js"></script>
+    <script src="scripts/components.js"></script>
 </head>
 
 <body class="flex flex-direction-column">
@@ -63,8 +63,8 @@
                 Currently executing <strong>Token Room</strong> in El Zonte (Bitcoin Beach)
             </p>
         </div>
-        <div class="flex flex-direction-column gap-0-5 align-items-center justify-content-center"
-            style="padding: 1.5rem; text-align: center; aspect-ratio: 1/1; width: 13rem; background-color: rgba(var(--foreground-color),1); border-radius: 10rem; justify-self: center; font-size: 1rem; font-weight: 500; margin-top: 2rem;">
+        <div id="token_price_wrapper"
+            class="flex flex-direction-column gap-0-5 align-items-center justify-content-center">
             <strong id="token_price" style="font-size: 2rem; line-height: 1;"></strong>
             <p class="flex flex-direction-column gap-0-5 justify-content-center">
                 Price per tokenroom# token
@@ -578,11 +578,46 @@
                 minimumFractionDigits: 0,
             });
         }
+        // fetch data and return json
+        async function fetchJSON(url, options = {}) {
+            const response = await fetch(url, options)
+            const json = await response.json()
+            if (response.ok) {
+                return json
+            } else {
+                throw new Error(json.description)
+            }
+        }
         window.onload = function () {
-            document.getElementById('token_price').textContent = formatCurrency(roomTokenPrice);
             document.getElementById('banner_content').textContent = `Looking for sellers. ${tokensNeeded} tokenroom# @ ${formatCurrency(roomTokenPrice)}`;
             if (tokensNeeded > 0)
                 document.getElementById('main_banner').classList.remove('hidden');
+            document.getElementById('token_price').innerHTML = `<sm-spinner></sm-spinner>`
+            fetchJSON(`https://ranchimallflo.duckdns.org/api/v2/smartContractInfo?contractName=swap-tokenroom-usd&contractAddress=FUSBi3sQ9YFRs76wiMrDYmhqguPCXue8po`)
+                .then(info => {
+                    console.log(info)
+                    const {
+                        contractInfo: {
+                            contractType,
+                            numberOfDeposits,
+                            numberOfParticipants,
+                            oracle_address,
+                            contractSubtype,
+                            status,
+                            expiryTime,
+                            payeeAddress,
+                            acceptingToken,
+                            sellingToken,
+                            totalHonorAmount,
+                            totalParticipationAmount,
+                            price
+                        }, contractAddress,
+                        contractName
+                    } = info
+                    document.getElementById('token_price').textContent = formatCurrency(price);
+                }).catch(error => {
+                    reject(error)
+                })
         }
     </script>
 </body>
