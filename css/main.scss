@@ -302,6 +302,24 @@ sm-copy {
     }
   }
 }
+table {
+  th {
+    &:first-of-type {
+      text-align: start;
+    }
+    &:last-of-type {
+      text-align: end;
+    }
+    padding-bottom: 1rem;
+  }
+  td {
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
+    &:last-of-type {
+      text-align: end;
+    }
+  }
+}
 
 @media screen and (min-width: 768px) {
   main {
