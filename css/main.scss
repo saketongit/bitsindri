@@ -57,6 +57,9 @@ strong {
 .flex-direction-column {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .grid {
   display: grid;
 }
@@ -82,6 +85,11 @@ strong {
 .justify-content-center {
   justify-content: center;
 }
+.wrap-around {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
 
 header {
   padding: 1.5rem 1rem;
@@ -90,7 +98,7 @@ header {
 main {
   display: grid;
   gap: 1rem;
-  padding: 1.5rem max(1rem, 6vw);
+  padding: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 #main_banner {
@@ -110,7 +118,7 @@ main {
 .app {
   display: flex;
   flex-direction: column;
-  padding: max(1.5rem, 3vw);
+  padding: max(1rem, 3vw);
   background-color: rgba(var(--foreground-color), 1);
   border-radius: 0.5rem;
   gap: 1rem;
