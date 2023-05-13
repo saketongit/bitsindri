@@ -341,15 +341,19 @@ table th {
 table th:first-of-type {
   text-align: start;
 }
-table th:last-of-type {
-  text-align: end;
+table th:not(:last-of-type) {
+  padding-right: 1rem;
 }
 table td {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
   font-size: 0.9rem;
 }
+table td:not(:last-of-type) {
+  padding-right: 1rem;
+}
 table td:last-of-type {
-  text-align: end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media screen and (min-width: 768px) {
