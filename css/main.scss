@@ -315,16 +315,20 @@ table {
     &:first-of-type {
       text-align: start;
     }
-    &:last-of-type {
-      text-align: end;
+    &:not(:last-of-type) {
+      padding-right: 1rem;
     }
     padding-bottom: 1rem;
   }
   td {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
     font-size: 0.9rem;
+    &:not(:last-of-type) {
+      padding-right: 1rem;
+    }
     &:last-of-type {
-      text-align: end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }
