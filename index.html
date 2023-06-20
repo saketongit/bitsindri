@@ -239,32 +239,9 @@
             document.getElementById('banner_content').textContent = `Looking for sellers. ₹{tokensNeeded} tokenroom# @ ₹{formatCurrency(roomTokenPrice)}`;
             if (tokensNeeded > 0)
                 document.getElementById('main_banner').classList.remove('hidden');
-            document.getElementById('token_price').innerHTML = `<sm-spinner></sm-spinner>`
-            fetchJSON(`https://ranchimallflo.duckdns.org/api/v2/smartContractInfo?contractName=swap-tokenroom-usd&contractAddress=FUSBi3sQ9YFRs76wiMrDYmhqguPCXue8po`)
-                .then(info => {
-                    console.log(info)
-                    const {
-                        contractInfo: {
-                            contractType,
-                            numberOfDeposits,
-                            numberOfParticipants,
-                            oracle_address,
-                            contractSubtype,
-                            status,
-                            expiryTime,
-                            payeeAddress,
-                            acceptingToken,
-                            sellingToken,
-                            totalHonorAmount,
-                            totalParticipationAmount,
-                            price
-                        }, contractAddress,
-                        contractName
-                    } = info
-                    document.getElementById('token_price').textContent = formatCurrency(price);
-                }).catch(error => {
-                    reject(error)
-                })
+            
+            
+                document.getElementById('token_price').textContent = formatCurrency(roomTokenPrice);
         }
     </script>
 </body>
